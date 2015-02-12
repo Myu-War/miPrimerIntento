@@ -9,15 +9,15 @@ package miprimerintento;
  * @author introduccion02
  */
 public class miPrimerIntento<T extends Comparable<T>> implements miEstructura<T>{
-   private Comparable[] arr;
+   private T[] arr;
    private int numElem=0;
    
    public miPrimerIntento(){
-       
+       this.arr =(T[]) new Comparable[1];
    }
    
    public miPrimerIntento(T elem){
-        this.arr = (Comparable[]) new Object[1];
+        this.arr = (T[]) new Comparable[1];
        
    }
 
@@ -60,15 +60,15 @@ public class miPrimerIntento<T extends Comparable<T>> implements miEstructura<T>
 
     @Override
     public void insertar(T elem) {
-        if(numElem>arr.length){
+        //if(numElem>arr.length){
             expandCapacity();
-        }
+        //}
         arr[numElem]=elem;
         numElem++;
     }
     
     private void expandCapacity(){
-        Comparable B[] = (Comparable[]) new Object[arr.length+2];
+        T[] B= (T[]) new Comparable[arr.length+2];
         
         for(int i=0; i<arr.length;i++){
             B[i]=arr[i];
