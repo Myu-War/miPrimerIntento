@@ -30,6 +30,7 @@ public class miPrimerIntento<T extends Comparable<T>> implements miEstructura<T>
             if(arr[i].equals(elem)){
                 res=true;
             }
+            i++;
         }
         
         if(res){
