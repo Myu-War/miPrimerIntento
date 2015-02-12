@@ -29,11 +29,9 @@ public class miEx extends Exception {
     public static void main(String [] args){
         miPrimerIntento m=new miPrimerIntento();
         
-        System.out.print("Hola");
-        m.insertar("que pedo");
-        System.out.print("\nHola");
+        m.insertar(1);
         try{
-            m.borrar(1);
+           System.out.print("\n"+ m.borrar(1));
         }
         catch(cheched o){
             System.out.print("no se halla en la estructura");
