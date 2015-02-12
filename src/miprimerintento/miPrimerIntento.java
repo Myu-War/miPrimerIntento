@@ -22,9 +22,23 @@ public class miPrimerIntento<T extends Comparable<T>> implements miEstructura<T>
    }
 
     @Override
-    public boolean borrar(T elem) {
+    public boolean borrar(T elem) throws cheched{
         boolean res=false;
-  
+        int i=0;
+        
+        while(i<arr.length || !res){
+            if(arr[i].equals(elem)){
+                res=true;
+            }
+        }
+        
+        if(res){
+            System.out.println("todo bien");
+        }
+        else{
+            throw new cheched("no se halla ");
+        }
+        
         
         
         return res;
@@ -46,10 +60,11 @@ public class miPrimerIntento<T extends Comparable<T>> implements miEstructura<T>
 
     @Override
     public void insertar(T elem) {
-        if(numElem==arr.length){
+        if(numElem>arr.length){
             expandCapacity();
         }
-        arr[numElem++]=elem;
+        arr[numElem]=elem;
+        numElem++;
     }
     
     private void expandCapacity(){

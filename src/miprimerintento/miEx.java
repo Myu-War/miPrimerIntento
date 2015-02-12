@@ -29,11 +29,13 @@ public class miEx extends Exception {
     
     public static void main(String [] args){
         miPrimerIntento m=new miPrimerIntento();
+        
+        m.insertar(5);
         try{
-            m.nada(0);
+            m.borrar(1);
         }
-        catch(miEx o){
-            System.out.print("no hay error");
+        catch(cheched o){
+            System.out.print("no se halla en la estructura");
         }
                 
     }
